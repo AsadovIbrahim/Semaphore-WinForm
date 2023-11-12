@@ -12,7 +12,7 @@ namespace Semaphore_WinForm
             InitializeComponent();
         }
 
-        void SomeMethod(object? state)
+        public void SomeMethod(object? state)
         {
             var semaphore = state as Semaphore;
 
@@ -92,7 +92,6 @@ namespace Semaphore_WinForm
 
         private void createdTxtBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Ensure that a valid integer is entered in the NumericUpDown control
             if (int.TryParse(numericUpDown1.Value.ToString(), out int semaphoreValue))
             {
                 Semaphore semaphore = new Semaphore(semaphoreValue, semaphoreValue, "SEMAPHORE");
@@ -124,8 +123,6 @@ namespace Semaphore_WinForm
             Semaphore semaphore = param as Semaphore;
             if (semaphore is null)
                 return;
-
-            // Your thread logic here
         }
 
 
